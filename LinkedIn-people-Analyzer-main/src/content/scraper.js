@@ -201,8 +201,10 @@
     } catch (_) { /* ignore */ }
     if (!(name || jobTitle || profileUrl || location || currentTitle)) return null;
     const internalId = hashString([name, profileUrl, jobTitle, location, currentTitle].join('|'));
-    const record = { internalId, name, profileUrl, jobTitle, location, currentTitle, followers, status };
-    chrome.runtime.sendMessage({ action: 'real_time_person_data', data: { name, profileUrl, jobTitle, location, currentTitle, followers, status } }, () => { });
+    // Capture the exact ISO timestamp when this status snapshot was taken.
+    const statusObservedAt = new Date().toISOString();
+    const record = { internalId, name, profileUrl, jobTitle, location, currentTitle, followers, status, statusObservedAt };
+    chrome.runtime.sendMessage({ action: 'real_time_person_data', data: { name, profileUrl, jobTitle, location, currentTitle, followers, status, statusObservedAt } }, () => { });
     return record;
   }
 

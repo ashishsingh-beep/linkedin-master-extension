@@ -1,0 +1,33 @@
+/* Derived from original people popup.css with back button */
+body { font-family:'Inter','Segoe UI',Roboto,Arial,sans-serif; width:360px; padding:18px 16px 20px; background:linear-gradient(135deg,#f7fbff 0%,#eef5ff 40%,#fafaff 100%); color:#1c2c48; margin:0; box-sizing:border-box; }
+.back-row { display:flex; align-items:center; gap:8px; }
+.back-row h2 { flex:1; font-size:20px; margin:0 0 12px 0; text-align:center; font-weight:700; letter-spacing:.4px; background:linear-gradient(90deg,#0073b1,#009fda,#6c5ce7); -webkit-background-clip:text; background-clip:text; color:transparent; }
+#backBtn { width:auto; padding:6px 10px; font-size:12px; background:#4b5f73; border-radius:6px; }
+.quick-search-row { display:flex; gap:6px; align-items:center; justify-content:flex-end; margin-top:-8px; margin-bottom:4px; }
+.quick-search-row input[type="text"] { flex:1; padding:7px 9px; border:1px solid #cbd6e2; border-radius:8px; font-size:12px; background:#fff; transition:border .2s, box-shadow .2s; }
+.quick-search-row input[type="text"]:focus { outline:none; border-color:#3392ff; box-shadow:0 0 0 3px rgba(0,123,255,.12); }
+.quick-search-row button { width:auto; padding:8px 14px; margin:0; font-size:12px; border-radius:8px; }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+label { font-size:12px; font-weight:500; color:#445b78; margin-bottom:4px; display:block; }
+input[type="number"] { padding:8px 10px; width:100%; margin-bottom:12px; box-sizing:border-box; border:1px solid #cbd6e2; border-radius:10px; background:#fff; font-size:13px; transition:border .2s, box-shadow .2s; }
+input[type="number"]:focus { outline:none; border-color:#3392ff; box-shadow:0 0 0 3px rgba(0,123,255,.12); }
+button { padding:9px 12px; width:100%; margin-bottom:8px; background:linear-gradient(135deg,#0073b1,#009fda); color:#fff; border:none; border-radius:10px; cursor:pointer; font-weight:600; font-size:13px; letter-spacing:.3px; transition:all .2s ease; box-shadow:0 2px 6px rgba(0,0,0,.1); }
+button:hover { transform:translateY(-2px); box-shadow:0 4px 12px rgba(0,0,0,.15); }
+button:active { transform:translateY(0); box-shadow:0 2px 6px rgba(0,0,0,.1); }
+button:disabled { opacity:.55; cursor:not-allowed; filter:grayscale(.4); }
+#stopBtn { background:linear-gradient(135deg,#d63031,#ff7675); }
+#stopBtn:hover { background:linear-gradient(135deg,#c2362b,#ff6b6b); }
+#downloadJSONBtn { background:linear-gradient(135deg,#0984e3,#74b9ff); }
+#downloadCSVBtn { background:linear-gradient(135deg,#6c5ce7,#a29bfe); }
+#progressWrapper { margin:12px 0 14px 0; }
+#progressBar { position:relative; height:14px; background:#e1ebf5; border-radius:10px; overflow:hidden; box-shadow:inset 0 1px 3px rgba(0,0,0,.08); }
+#progressFill { position:absolute; left:0; top:0; bottom:0; width:0%; background:linear-gradient(90deg,#6c5ce7,#009fda,#00b894); background-size:200% 100%; animation:progressFlow 2s linear infinite; transition:width .25s ease; border-radius:10px; }
+@keyframes progressFlow { 0% { background-position:0% 50%; } 100% { background-position:200% 50%; } }
+#progressText { font-size:11px; margin-top:6px; font-family:monospace; color:#334e68; text-align:center; }
+#people { max-height:280px; overflow-y:auto; border:1px solid #d6e2ed; padding:8px 10px 12px; background:#fffffffa; border-radius:10px; box-shadow:inset 0 1px 2px rgba(0,0,0,.04); font-size:12px; }
+.status { font-size:12px; padding:6px 8px; border-radius:8px; margin-bottom:8px; font-weight:600; border:1px solid transparent; box-shadow:0 1px 3px rgba(0,0,0,.06); }
+.status-info { background:#eef5ff; color:#22577a; border-color:#d0e4ff; }
+.status-loading { background:#fff7e6; color:#8f5e00; border-color:#ffe6b3; }
+.status-success { background:#e6fbf1; color:#087f5b; border-color:#b9f3db; }
+.status-error { background:#ffecec; color:#b80000; border-color:#ffb3b3; }
+pre { white-space:pre-wrap; word-wrap:break-word; font-size:12px; margin:0; }

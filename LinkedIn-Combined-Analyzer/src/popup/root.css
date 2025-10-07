@@ -1,0 +1,8 @@
+body { font-family: 'Inter', 'Segoe UI', Roboto, Arial, sans-serif; width:320px; padding:18px 16px 22px; margin:0; background:linear-gradient(135deg,#f7fbff 0%,#eef5ff 40%,#fafaff 100%); color:#142b3f; }
+h2 { margin:0 0 14px 0; font-size:20px; text-align:center; font-weight:700; background:linear-gradient(90deg,#0073b1,#009fda,#6c5ce7); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.subtitle { margin:0 0 12px 0; text-align:center; font-size:13px; color:#365670; }
+.menu { display:flex; flex-direction:column; gap:12px; }
+button { padding:12px 14px; font-size:14px; font-weight:600; border:none; border-radius:12px; cursor:pointer; background:linear-gradient(135deg,#0073b1,#009fda); color:#fff; letter-spacing:.3px; box-shadow:0 2px 6px rgba(0,0,0,.12); transition:all .2s ease; }
+button:hover { transform:translateY(-2px); box-shadow:0 4px 12px rgba(0,0,0,.18); }
+button:active { transform:translateY(0); box-shadow:0 2px 6px rgba(0,0,0,.12); }
+.hint { font-size:11px; line-height:1.4; margin-top:18px; text-align:center; color:#4b6a84; }

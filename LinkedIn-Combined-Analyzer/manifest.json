@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Data Collector",
+  "description": "Collect LinkedIn posts or people search results (combined).",
+  "version": "1.0.0",
+  "permissions": ["scripting", "activeTab", "storage", "downloads"],
+  "host_permissions": ["*://www.linkedin.com/*"],
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_icon": { "16": "src/assets/logo.png" }
+  },
+  "icons": {
+    "16": "src/assets/logo.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.linkedin.com/*"],
+      "js": ["src/content/posts_scraper.js", "src/content/people_scraper.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

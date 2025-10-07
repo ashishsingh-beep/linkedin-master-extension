@@ -112,8 +112,17 @@ scrapeBtn.addEventListener('click', () => {
         if(err){ setStatus(`Error: ${err.message}`,'error'); setScrapingState(false); return; }
         if(!resp){ setStatus('No response from content script','error'); setScrapingState(false); return; }
         if(!resp.ok && !resp.cancelled){ setStatus(`Scrape failed: ${resp.error||'Unknown'}`,'error'); setScrapingState(false); return; }
-  const fieldsOrder=['name','profileUrl','jobTitle','location','currentTitle','followers','status'];
-        scrapedPeople = (resp.people||[]).map(p=>{ const o={}; fieldsOrder.forEach(f=> o[f]= p && (p[f]!==undefined)? p[f]:'' ); return o; });
+  const fieldsOrder=['name','profileUrl','jobTitle','location','currentTitle','followers','status','statusObservedAt'];
+        scrapedPeople = (resp.people||[]).map(p=>{ const o={};
+          fieldsOrder.forEach(f=> { o[f]= p && (p[f]!==undefined)? p[f]:''; });
+          if(!o.statusObservedAt){ o.statusObservedAt = new Date().toISOString(); }
+          // Derive a human friendly version (local timezone, short style)
+          try {
+            o.statusObservedHuman = new Date(o.statusObservedAt).toLocaleString(undefined, {
+              year:'numeric', month:'short', day:'2-digit', hour:'2-digit', minute:'2-digit', second:'2-digit'
+            });
+          } catch(_) { o.statusObservedHuman = o.statusObservedAt; }
+          return o; });
         const modeLabel = resp.mode==='auto' ? ' (auto)' : '';
         if(resp.cancelled) setStatus(`Scrape cancelled${modeLabel}. Collected ${resp.count} people (partial).`,'info');
         else setStatus(`Scrape complete${modeLabel}. Collected ${resp.count} people.`,'success');
