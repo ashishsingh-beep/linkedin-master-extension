@@ -1,0 +1,121 @@
+/* General popup styles */
+body {
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  width: 360px;
+  padding: 16px 16px 18px;
+  background: linear-gradient(135deg,#f0f7ff 0%,#e8f5ff 35%,#fdfbff 100%);
+  color: #102a43;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Search bar */
+#searchBarContainer { display:flex; gap:6px; margin: 0 0 14px 0; }
+#searchBarContainer input[type="text"] { flex:1; padding:6px 8px; border:1px solid #c6d6e5; border-radius:6px; font-size:13px; background:#fff; transition: border .2s, box-shadow .2s; }
+#searchBarContainer input[type="text"]:focus { outline:none; border-color:#3392ff; box-shadow:0 0 0 2px rgba(0,123,255,.15); }
+#searchBarContainer button { width:auto; padding:8px 14px; }
+
+/* Headings */
+h2 {
+  font-size: 19px;
+  margin: 0 0 14px 0;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: .5px;
+  background: linear-gradient(90deg,#0073b1,#009fda,#6c5ce7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Input and buttons */
+input[type="number"] {
+  padding: 6px 8px;
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #c6d6e5;
+  border-radius: 6px;
+  background:#fff;
+  font-size:13px;
+  transition: border .2s, box-shadow .2s;
+}
+input[type="number"]:focus {
+  outline:none;
+  border-color:#3392ff;
+  box-shadow:0 0 0 2px rgba(0,123,255,.15);
+}
+
+button {
+  padding: 8px 12px;
+  width: 100%;
+  margin-bottom: 6px;
+  background: linear-gradient(135deg,#0073b1,#009fda);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size:13px;
+  letter-spacing:.3px;
+  transition: transform .15s, box-shadow .2s, background .3s;
+  box-shadow:0 2px 4px rgba(0,0,0,.08);
+}
+button:hover { transform: translateY(-2px); box-shadow:0 4px 10px rgba(0,0,0,.15); }
+button:active { transform: translateY(0); box-shadow:0 2px 4px rgba(0,0,0,.1); }
+
+/* Posts container */
+#posts {
+  max-height: 320px;
+  overflow-y: auto;
+  margin-top: 12px;
+  border: 1px solid #d6e2ed;
+  padding: 6px 8px 10px;
+  background: #fffffffa;
+  border-radius: 8px;
+  backdrop-filter: blur(2px);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.04);
+}
+
+#progress {
+  font-family: monospace;
+  background:#fafafa;
+  border:1px dashed #bbb;
+  padding:4px 6px;
+  border-radius:4px;
+  min-height:18px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* New progress bar container */
+#progressWrapper { margin:10px 0 12px 0; }
+#progressBar { position:relative; height:12px; background:#dde7f0; border-radius:6px; overflow:hidden; box-shadow: inset 0 1px 2px rgba(0,0,0,.08); }
+#progressBar #progressFill { position:absolute; left:0; top:0; bottom:0; width:0%; background: linear-gradient(90deg,#6c5ce7,#009fda,#00b894); transition: width .25s ease; }
+#progressText { font-size:11px; margin-top:6px; font-family:monospace; color:#334e68; }
+
+/* Stop button variant */
+button#stopBtn { background:#cc0000; }
+button#stopBtn:hover { background:#990000; }
+
+/* Preformatted post data */
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 12px;
+  margin: 0;
+}
+
+/* Status messages */
+.status { font-size:12px; padding:6px 8px; border-radius:6px; margin-bottom:8px; font-weight:600; border:1px solid transparent; box-shadow:0 1px 2px rgba(0,0,0,.06);} 
+.status-info { background:#eef5ff; color:#22577a; border-color:#d0e4ff; }
+.status-loading { background:#fff7e6; color:#8f5e00; border-color:#ffe6b3; }
+.status-success { background:#e6fbf1; color:#087f5b; border-color:#b9f3db; }
+.status-error { background:#ffecec; color:#b80000; border-color:#ffb3b3; }
+
+button:disabled { opacity:0.55; cursor: not-allowed; filter:grayscale(.4); }
+button#stopBtn { background: linear-gradient(135deg,#d63031,#ff7675); }
+button#stopBtn:hover { background: linear-gradient(135deg,#c2362b,#ff6b6b); }
+button#downloadJSONBtn { background: linear-gradient(135deg,#0984e3,#74b9ff); }
+button#downloadCSVBtn { background: linear-gradient(135deg,#6c5ce7,#a29bfe); }

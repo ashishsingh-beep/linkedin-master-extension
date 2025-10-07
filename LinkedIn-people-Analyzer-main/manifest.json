@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn People Analyzer",
+  "description": "Scrape LinkedIn people search results (name, job title, location, followers, status) to JSON/CSV",
+  "version": "1.1",
+  "permissions": ["scripting", "activeTab", "storage", "downloads"],
+  "host_permissions": [
+    "*://www.linkedin.com/*"
+  ],
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "src/assets/logo.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.linkedin.com/*"],
+      "js": ["src/content/scraper.js"]
+    }
+  ]
+}
